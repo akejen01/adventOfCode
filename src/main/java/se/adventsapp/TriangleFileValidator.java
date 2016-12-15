@@ -47,23 +47,23 @@ public class TriangleFileValidator {
 		int b;
 		int c;
 		
+		
+		
+		
 		while ((strLine = br.readLine()) != null)   {
-		  String newString  = StringUtils.strip(strLine);
 		  
-		  List<String> numberList = Arrays.asList(newString.split("  "));
-		  
-		  
-		  
-		  
-		  
-		  a = Integer.parseInt(numberList.get(0).replaceAll(" ", ""));
-		  b = Integer.parseInt(numberList.get(0).replaceAll(" ", ""));
-		  c = Integer.parseInt(numberList.get(0).replaceAll(" ", ""));
-		  
-		  
+		  a = Integer.parseInt(strLine.substring(0, 5).trim());
+		  b = Integer.parseInt(strLine.substring(6, 10).trim());
+		  c = Integer.parseInt(strLine.substring(11).trim());
 		  
 		  triangel.setSides(a,b,c);
 		  System.out.println ("row: "+rownum +" : " + strLine + " är valid :" + triangel.isValid());
+		  if (triangel.isValid()){
+			  this.numOfValidTriangles++;
+		  } else {
+			  this.numOfInvalidTriangles++;
+		  }
+		  
 		  rownum++;
 		}
 

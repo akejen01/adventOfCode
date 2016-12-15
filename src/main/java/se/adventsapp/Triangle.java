@@ -10,9 +10,9 @@ public class Triangle {
 		this.setSides(5, 5, 5);
 	}
 
-	public Object isValid() {
+	public boolean isValid() {
 
-		System.out.println("Trangel: "+ this.toString());
+		//System.out.println("Trangel: "+ this.toString());
 		
 		if ((this.sideA + this.sideB) > this.sideC && (this.sideB + this.sideC) > this.sideA && (this.sideA + this.sideC) > this.sideB ){
 			return true;

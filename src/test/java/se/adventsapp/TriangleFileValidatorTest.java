@@ -18,6 +18,8 @@ public class TriangleFileValidatorTest {
 		TriangleFileValidator tfv = new TriangleFileValidator("trianglar.txt");
 
 		tfv.readFileAndValidateTriangles();
+		System.out.println("invalida " + tfv.getNumOfInvalidTriangles());
+		System.out.println("Valida " + tfv.getNumOfValidTriangles());
 		
 	}
 
