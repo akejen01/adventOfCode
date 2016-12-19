@@ -1,31 +1,30 @@
 package se.adventsapp;
 
 import java.lang.Math;
+import java.util.List;
+
+import com.google.common.collect.Lists;
 
 
-public class Bunny {
+public class Agent {
 	
-	private int x;
-	private int y;
+
+	private Location location = new Location();
 	private String riktning;
 
-	public Bunny() {
+	private List<Location> locationList = Lists.newArrayList();
+	
+	public Agent() {
 		this.riktning = "N";
-		this.x = 0;
-		this.y = 0;
+		this.location.setX(0);
+		this.location.setY(0);
 	}
 
 	public String getHeading() {
 		return this.riktning;
 	}
 
-	public Integer getX() {
-		return this.x;
-	}
 
-	public Integer getY() {
-		return this.y;
-	}
 
 	public void turnLeft() {
 
@@ -65,20 +64,20 @@ public class Bunny {
 
 	}
 
-	public void moveBunny(int steps) {
+	public void moveAgent(int steps) {
 		
 		switch (this.getHeading()) {
 		case "N":
-			this.y = this.y + steps;
+			this.location.y =this.location.y + steps;
 			break;
 		case "E":
-			this.x = this.x + steps;
+			this.location.x = this.location.x + steps;
 			break;
 		case "S":
-			this.y = this.y - steps;
+			this.location.y = this.location.y - steps;
 			break;
 		case "W":
-			this.x = this.x - steps;
+			this.location.x = this.location.x - steps;
 			break;
 		}
 		
@@ -93,7 +92,10 @@ public class Bunny {
 		}
 		
 		String steps = string.substring(1);
-		this.moveBunny(Integer.parseInt(steps));
+		this.moveAgent(Integer.parseInt(steps));
+		
+		// Här ska vi kolla om det är samma ställe som förut.
+		
 		
 	}
 
@@ -113,13 +115,28 @@ public class Bunny {
 //		System.out.println("X:"+  this.x);
 //		System.out.println("Y:"+  this.y);
 		
-		return Math.abs(x) + Math.abs(y);
+		return Math.abs(this.location.getX()) + Math.abs(this.location.getY());
 	}
 
-	public void resetBunny() {
+	public void resetAgent() {
 		this.riktning = "N";
-		this.x = 0;
-		this.y = 0;
+		this.location.x = 0;
+		this.location.y = 0;
+	}
+
+	public Location getLocation() {
+		
+		return this.location;
+	}
+
+	public String firstIntersection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Location> getLocationList() {
+		// TODO Auto-generated method stub
+		return this.locationList;
 	}
 
 }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-public class KeypadTest {
+public class Keypad9DigitsTest {
 
 	// 123
 	// 456
@@ -15,34 +15,34 @@ public class KeypadTest {
 	@Test
 	public void enNyKeypadHarNummer5NärDenÄrNy() {
 
-		Keypad keypad = new Keypad();
+		Keypad9Digits keypad = new Keypad9Digits();
 		
-		assertThat(keypad.getCurrentKey(), is(5));
+		assertThat(keypad.getCurrentKey(), is('5'));
 	}
 	
 	@Test
 	public void enKeypadKanTaKommandon(){
 		
-		Keypad keypad = new Keypad();
+		Keypad9Digits keypad = new Keypad9Digits();
 		
 		keypad.moveCommand("U");
-		assertThat(keypad.getCurrentKey(), is(2));
+		assertThat(keypad.getCurrentKey(), is('2'));
 		keypad.moveCommand("R");
-		assertThat(keypad.getCurrentKey(), is(3));
+		assertThat(keypad.getCurrentKey(), is('3'));
 		keypad.moveCommand("D");
-		assertThat(keypad.getCurrentKey(), is(6));
+		assertThat(keypad.getCurrentKey(), is('6'));
 		keypad.moveCommand("L");
 		keypad.moveCommand("L");
-		assertThat(keypad.getCurrentKey(), is(4));
+		assertThat(keypad.getCurrentKey(), is('4'));
 		keypad.moveCommand("L");
-		assertThat(keypad.getCurrentKey(), is(4));
+		assertThat(keypad.getCurrentKey(), is('4'));
 	
 	}
 	
 	@Test
 	public void testaEnListaMedKommandon(){
 		
-		Keypad keypad = new Keypad();
+		Keypad9Digits keypad = new Keypad9Digits();
 		
 		String commandoLista1 = "ULL";
 		String commandoLista2 = "RRDDD";
@@ -50,20 +50,20 @@ public class KeypadTest {
 		String commandoLista4 = "UUUUD";
 		
 		keypad.moveCommandList(Arrays.asList(commandoLista1.split("")));
-		assertThat(keypad.getCurrentKey(), is(1));
+		assertThat(keypad.getCurrentKey(), is('1'));
 		keypad.moveCommandList(Arrays.asList(commandoLista2.split("")));
-		assertThat(keypad.getCurrentKey(), is(9));
+		assertThat(keypad.getCurrentKey(), is('9'));
 		keypad.moveCommandList(Arrays.asList(commandoLista3.split("")));
-		assertThat(keypad.getCurrentKey(), is(8));
+		assertThat(keypad.getCurrentKey(), is('8'));
 		keypad.moveCommandList(Arrays.asList(commandoLista4.split("")));
-		assertThat(keypad.getCurrentKey(), is(5));
+		assertThat(keypad.getCurrentKey(), is('5'));
 		
 		
 	}
 	
 	@Test
 	public void problem2(){
-		Keypad keypad = new Keypad();
+		Keypad9Digits keypad = new Keypad9Digits();
 		
 		String commandoLista1 = "DLUUULUDLRDDLLLUDULLULLRUURURLUULDUUUDLDDRUDLUULLRLDDURURDDRDRDLDURRURDLDUURULDDULDRDDLDLDLRDRUURLDLUDDDURULRLLLLRLULLUDRDLDUURDURULULULRLULLLULURLRDRDDDDDDDLRLULUULLULURLLDLRLUDULLDLLURUDDLDULDLULDDRLRLRDDLRURLLLURRLDURRDLLUUUUDRURUULRLDRRULLRUDLDRLUDRDRDRRDDURURRDRDRUDURDLUDRUDLRRULDLRDDRURDDUUDLDRDULDDRRURLLULRDRURLRLDLLLUULUUDLUDLDRRRRDUURULDUDUDRLDLLULLLRDDDDDLRDDLLUULLRRRDURLRURDURURLUDRRLRURDRDRRRRULUDLDRDULULRUDULLLUDRRLRLURDDURULDUUDULLURUULRDRDULRUUUDURURDDRRUDURRLRDRULRUUU";
 		String commandoLista2 = "LDRURRUUUULDRDDDLLULDRUDDRLLDLDRDLRUDDDLDDULULULLRULDUDRRDLRUURURDRURURDLLRUURDUUDRLDURDRDLRRURURDUUUURUURRLLLDRDUURRRRURULUUUDLUDDRUURRLDULRDULRRRRUDURRLURULRURRDRDLLDRRDUDRDURLDDRURULDRURUDDURDLLLUURRLDRULLURDRDRLDRRURRLRRRDDDDLUDLUDLLDURDURRDUDDLUDLRULRRRDRDDLUDRDURDRDDUURDULRRULDLDLLUDRDDUDUULUDURDRLDURLRRDLDDLURUDRLDUURLLRLUDLLRLDDUDLLLRRRLDLUULLUDRUUDRLDUUUDUURLRDDDDRRDRLDDRDLUDRULDDDRDUULLUUUUULDULRLLLRLLDULRDUDDRDDLRRLRDDULLDURRRURDDUDUDDRLURRLUUUULLDRDULUUDRDULDLLUDLURDLLURRDLUULURRULRLURRRRRUURDDURLRLLDDLRRDUUURDRDUDRDDDLLDDRDRRRLURRDUULULULULRRURDDLDDLLLRUDDDDDDLLLRDULURULLRLRDRR";
