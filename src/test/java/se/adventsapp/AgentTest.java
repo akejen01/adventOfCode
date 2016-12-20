@@ -82,7 +82,7 @@ public class AgentTest {
 		
 		Agent agenten = new Agent(); 
 		agenten.moveCommand("R2");
-		//assertThat(agenten.getLocationList().size(), is(3));
+		assertThat(agenten.getLocationList().size(), is(3));
 		assertThat(agenten.shortestPath(), is(2));
 	}
 	
@@ -93,7 +93,7 @@ public class AgentTest {
 		agenten.moveCommandList("R8, R4, R4, R8");
 		assertThat(agenten.shortestPath(), is(8));
 		//assertThat(agenten.firstIntersection(), is(4));
-		System.out.println("Första korsningen:" + agenten.firstIntersection());
+		System.out.println("Alla lägen: " + agenten.getLocationList());
 		System.out.println("Vägen fram: " + agenten.shortestPath());
 		
 	}
@@ -111,6 +111,9 @@ public class AgentTest {
 	@Test
 	public void andraProblemet(){
 		Agent agenten = new Agent();
+		
+		agenten.moveCommandList("R3, L5, R2, L1, L2, R5, L2, R2, L2, L2, L1, R2, L2, R4, R4, R1, L2, L3, R3, L1, R2, L2, L4, R4, R5, L3, R3, L3, L3, R4, R5, L3, R3, L5, L1, L2, R2, L1, R3, R1, L1, R187, L1, R2, R47, L5, L1, L2, R4, R3, L3, R3, R4, R1, R3, L1, L4, L1, R2, L1, R4, R5, L1, R77, L5, L4, R3, L2, R4, R5, R5, L2, L2, R2, R5, L2, R194, R5, L2, R4, L5, L4, L2, R5, L3, L2, L5, R5, R2, L3, R3, R1, L4, R2, L1, R5, L1, R5, L1, L1, R3, L1, R5, R2, R5, R5, L4, L5, L5, L5, R3, L2, L5, L4, R3, R1, R1, R4, L2, L4, R5, R5, R4, L2, L2, R5, R5, L5, L2, R4, R4, L4, R1, L3, R1, L1, L1, L1, L4, R5, R4, L4, L4, R5, R3, L2, L2, R3, R1, R4, L3, R1, L4, R3, L3, L2, R2, R2, R2, L1, L4, R3, R2, R2, L3, R2, L3, L2, R4, L2, R3, L4, R5, R4, R1, R5, R3");
+		System.out.println("Vägen fram: " + agenten.shortestPath());
 		
 	}
 	
