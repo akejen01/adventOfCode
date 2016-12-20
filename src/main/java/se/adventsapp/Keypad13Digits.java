@@ -11,77 +11,113 @@ public class Keypad13Digits extends Keypad {
 	*/
 	
 	public Keypad13Digits() {
-		this.currentKey = 5;
+		this.currentKey = '5';
 	}
 
 	@Override
 	public void moveCommand(String string) {
 		switch (this.getCurrentKey()) {
-		case 1:
+		case '1':
 			if (string.equals("D")) {
-				this.currentKey = 3;
+				this.currentKey = '3';
 			} 
 			break;
-		case 2:
+		case '2':
 			if (string.equals("D")) {
-				this.currentKey = 6;
+				this.currentKey = '6';
 			} else if (string.equals("R")) {
-				this.currentKey = 3;
+				this.currentKey = '3';
 			}
 			break;
-		case 3:
+		case '3':
 			if (string.equals("L")) {
-				this.currentKey = 2;
+				this.currentKey = '2';
 			} else if (string.equals("D")) {
-				this.currentKey = 7;
+				this.currentKey = '7';
 			} else if (string.equals("U")) {
-				this.currentKey = 1;
+				this.currentKey = '1';
 			} else if (string.equals("R")) {
-				this.currentKey = 4;
+				this.currentKey = '4';
 			}
 			break;
-		case 4:
+		case '4':
 			if (string.equals("L")) {
-				this.currentKey = 3;
+				this.currentKey = '3';
 			} else if (string.equals("D")) {
-				this.currentKey = 8;
+				this.currentKey = '8';
 			}
 			break;
-		case 5:
+		case '5':
 			if (string.equals("R")) {
-				this.currentKey = 6;
+				this.currentKey = '6';
 			} 
 			break;
-		case 6:
+		case '6':
 			if (string.equals("L")) {
-				this.currentKey = 5;
+				this.currentKey = '5';
 			} else if (string.equals("D")) {
-				this.currentKey = 9;
+				this.currentKey = 'A';
 			} else if (string.equals("U")) {
-				this.currentKey = 3;
-			}
-			break;
-		case 7:
-			if (string.equals("R")) {
-				this.currentKey = 8;
-			} else if (string.equals("U")) {
-				this.currentKey = 4;
-			}
-			break;
-		case 8:
-			if (string.equals("L")) {
-				this.currentKey = 7;
+				this.currentKey = '2';
 			} else if (string.equals("R")) {
-				this.currentKey = 9;
-			} else if (string.equals("U")) {
-				this.currentKey = 5;
+				this.currentKey = '7';
 			}
 			break;
-		case 9:
-			if (string.equals("L")) {
-				this.currentKey = 8;
+		case '7':
+			if (string.equals("R")) {
+				this.currentKey = '8';
 			} else if (string.equals("U")) {
-				this.currentKey = 6;
+				this.currentKey = '3';
+			} else if (string.equals("D")) {
+				this.currentKey = 'B';
+			} else if (string.equals("L")) {
+				this.currentKey = '6';
+			}
+			break;
+		case '8':
+			if (string.equals("L")) {
+				this.currentKey = '7';
+			} else if (string.equals("R")) {
+				this.currentKey = '9';
+			} else if (string.equals("U")) {
+				this.currentKey = '4';
+			} else if (string.equals("D")) {
+				this.currentKey = 'C';
+			}
+			break;
+		case '9':
+			if (string.equals("L")) {
+				this.currentKey = '8';
+			} 
+			break;
+		case 'A':
+			if (string.equals("R")) {
+				this.currentKey = 'B';
+			} else if (string.equals("U")) {
+				this.currentKey = '6';
+			} 		
+			break;
+		case 'B':
+			if (string.equals("L")) {
+				this.currentKey = 'A';
+			} else if (string.equals("R")) {
+				this.currentKey = 'C';
+			} else if (string.equals("U")) {
+				this.currentKey = '7';
+			} else if (string.equals("D")) {
+				this.currentKey = 'D';
+			}
+			break;
+		case 'C':
+			if (string.equals("L")) {
+				this.currentKey = 'B';
+			} else if (string.equals("U")) {
+				this.currentKey = '8';
+			}
+			break;
+		case 'D':
+			if (string.equals("U")) {
+				this.currentKey = 'B';
 			}
 			break;
 
