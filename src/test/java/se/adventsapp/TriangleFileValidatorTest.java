@@ -13,16 +13,27 @@ import org.junit.Test;
 public class TriangleFileValidatorTest {
 
 	@Test
-	public void kanLäsaEnFil() throws IOException {
+	public void kanLäsaEnFilRadvis() throws IOException {
 
 		TriangleFileValidator tfv = new TriangleFileValidator("trianglar.txt");
 
-		tfv.readFileAndValidateTriangles();
+		tfv.readFileRowAndValidateTriangles();
 		System.out.println("invalida " + tfv.getNumOfInvalidTriangles());
 		System.out.println("Valida " + tfv.getNumOfValidTriangles());
 		
 	}
 
 
+	@Test
+	public void kanLäsaEnFil3RaderItaget() throws Exception{
+		
+		TriangleFileValidator tfv = new TriangleFileValidator("trianglar.txt");
+		
+		tfv.readFile3RowAndValidateTriangels();
+		
+		System.out.println("invalida " + tfv.getNumOfInvalidTriangles());
+		System.out.println("Valida " + tfv.getNumOfValidTriangles());
+		
+	}
 
 }

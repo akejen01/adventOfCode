@@ -68,4 +68,23 @@ public class AdventOfCodeProblems {
 		
 	}
 	
+	@Test
+	public void Day3Part1And2() throws Exception{
+		
+		TriangleFileValidator tfv = new TriangleFileValidator("trianglar.txt");
+		
+		System.out.println("Part 1:");
+		tfv.readFileRowAndValidateTriangles();
+		System.out.println("invalida " + tfv.getNumOfInvalidTriangles());
+		System.out.println("Valida " + tfv.getNumOfValidTriangles());
+		
+		tfv.resetCounters();
+		
+		tfv.readFile3RowAndValidateTriangels();
+		System.out.println("Part 2:");
+		System.out.println("invalida " + tfv.getNumOfInvalidTriangles());
+		System.out.println("Valida " + tfv.getNumOfValidTriangles());
+		
+	}
+	
 }

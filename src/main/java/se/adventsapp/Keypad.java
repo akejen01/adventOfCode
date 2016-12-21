@@ -13,7 +13,7 @@ public abstract class Keypad {
 	}
 
 
-	abstract public void moveCommand(String string); 
+	abstract void moveCommand(String string); 
 
 	public void moveCommandList(List<String> commandList){
 		
