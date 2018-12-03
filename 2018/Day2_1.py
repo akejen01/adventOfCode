@@ -41,11 +41,11 @@ class TestMethod(unittest.TestCase):
          self.assertEqual(boxIdTwoTimes('bababc'), True)
          self.assertEqual(boxIdThreeTimes('bababc'), True)
 
-      def test_3(self):
-          self.assertEqual(calculateBoxChecksum([-1, -2, -3]), -6)
+    #   def test_3(self):
+    #       self.assertEqual(calculateBoxChecksum([-1, -2, -3]), -6)
 
-      def test_4(self):
-          self.assertEqual(calculateBoxChecksum(['+15', '-7', '+16', '+5']), 29)
+    #   def test_4(self):
+    #       self.assertEqual(calculateBoxChecksum(['+15', '-7', '+16', '+5']), 29)
 
 ## Fixa så att det är en funktion som räknar. Det blir fel på 'Two' den räknar med 'Three' också.
     
@@ -53,7 +53,7 @@ def boxIdTwoTimes(boxid):
     wc = Counter(boxid)
     returnValue = False
     for i in wc.values():
-        if (i > 1 ):
+        if (i == 2 ):
             returnValue = True
     return returnValue
 
@@ -61,7 +61,7 @@ def boxIdThreeTimes(boxid):
     wc = Counter(boxid)
     returnValue = False
     for i in wc.values():
-        if (i > 2 ):
+        if (i == 3 ):
             returnValue = True
     return returnValue
 

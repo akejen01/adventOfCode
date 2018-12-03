@@ -87,7 +87,7 @@ def frequencyChangeSum(numbers):
 
 def findFrequenceDouble(numbers):
     currentFrequence = 0 # Always start on 0
-    foundFrequences =[]
+    foundFrequences = set()
     found = False
     doubleFrequence = 0  
     times = 0
@@ -98,12 +98,12 @@ def findFrequenceDouble(numbers):
         for frequence in numbers:
             currentFrequence = currentFrequence + int(frequence)
 
-            for i in range(len(foundFrequences)):
-                if (currentFrequence == foundFrequences[i] and found == False):
+            if (currentFrequence in foundFrequences and found == False):
                     found = True
                     doubleFrequence = currentFrequence
                     break
-            foundFrequences.append(currentFrequence)
+
+            foundFrequences.add(currentFrequence)
 
     return doubleFrequence    
 
