@@ -27,6 +27,27 @@ For example, if you see the following box IDs:
 
 Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
 
+--- Part Two ---
+Confident that your list of box IDs is complete, you're ready to find the boxes full of prototype fabric.
+
+The boxes will have IDs which differ by exactly one character at the same position in both strings. 
+For example, given the following box IDs:
+
+abcde
+fghij
+klmno
+pqrst
+fguij
+axcye
+wvxyz
+The IDs abcde and axcye are close, but they differ by two characters (the second and fourth). However, the IDs fghij and fguij differ by exactly one character, the third (h and u). Those must be the correct boxes.
+
+What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing character from either ID, producing fgij.)
+
+Although it hasn't changed, you can still get your puzzle input.
+
+
+
 """
 import unittest
 from collections import Counter
@@ -46,6 +67,9 @@ class TestMethod(unittest.TestCase):
 
     #   def test_4(self):
     #       self.assertEqual(calculateBoxChecksum(['+15', '-7', '+16', '+5']), 29)
+
+
+
 
 ## Fixa så att det är en funktion som räknar. Det blir fel på 'Two' den räknar med 'Three' också.
     
@@ -76,10 +100,12 @@ def main():
         countLines += 1
         if (boxIdTwoTimes(line)):
             checkSumTwoTimes += 1
+            print(line)
 
         if (boxIdThreeTimes(line)):
             checkSumThreeTimes += 1
-    print("Countlines : " + str(countLines) +" : "+ str(checkSumTwoTimes * checkSumThreeTimes))
+            print(line)
+    print("Checksum : "+ str(checkSumTwoTimes * checkSumThreeTimes))
 
     
     
