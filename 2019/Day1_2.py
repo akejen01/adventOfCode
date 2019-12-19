@@ -22,21 +22,38 @@ import unittest, math
 
 class TestMethod(unittest.TestCase):
 
+
      def test_1(self):
-         self.assertEqual(calculateFuelForMass(12), 2)
+         self.assertEqual(calculateFuelForMassWithFuel(12), 2)
 
      def test_2(self):
-         self.assertEqual(calculateFuelForMass(14), 2)
+         self.assertEqual(calculateFuelForMassWithFuel(14), 2)
 
      def test_3(self):
-         self.assertEqual(calculateFuelForMass(1969), 654)
+         self.assertEqual(calculateFuelForMassWithFuel(1969), 966)
 
      def test_4(self):
-         self.assertEqual(calculateFuelForMass(100756), 33583)
+         self.assertEqual(calculateFuelForMassWithFuel(100756), 50346)
 
 def round_down(n, decimals=0):
     multiplier = 10 ** decimals
     return math.floor(n * multiplier) / multiplier
+
+
+def calculateFuelForMassWithFuel(mass):
+    initialFuel = round_down(mass / 3 ) - 2
+
+    # added fuel requiers fuel?
+    addedFuel = initialFuel
+    extraFuel = 0
+    totalAddedFuel = 0
+
+    while ( calculateFuelForMass(addedFuel) > 0 ):
+        extraFuel = calculateFuelForMass(addedFuel)
+        addedFuel = extraFuel
+        totalAddedFuel = totalAddedFuel + extraFuel
+
+    return initialFuel + totalAddedFuel
 
 
 def calculateFuelForMass(mass):
@@ -54,13 +71,13 @@ def main():
     totalFuelUsed = 0
 
     for l in lines:
-        totalFuelUsed = totalFuelUsed + calculateFuelForMass(int(l))
+        totalFuelUsed = totalFuelUsed + calculateFuelForMassWithFuel(int(l))
 
 
 
 
     print("Sum: " + str(int(totalFuelUsed)))
-    #print("Double: " + str(findFrequenceDouble(lines)))
+    
 
     
 
