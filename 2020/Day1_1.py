@@ -28,19 +28,27 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 
 Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
 
-
+>>> data = [1721, 979,366,299,675,1456]
+>>> list(itertools.accumulate(data, operator.mul))
+[1721, 1684859, 616658394, 184380859806, 124457080369050, 181209509017336800]
+>>> list(itertools.accumulate(data, operator.add))
+[1721, 2700, 3066, 3365, 4040, 5496]
+>>> 
 
 """
-import unittest, math
+import unittest, math, itertools, operator
 
 
 class TestMethod(unittest.TestCase):
 
-     def test_1(self):
+    def test_1(self):
          self.assertEqual(checkIf2020(2010, 10), True)
 
-     def test_2(self):
+    def test_2(self):
          self.assertEqual(checkIf2020(2000, 10), False)
+
+    def test_3(self):
+        self.assertEqual(calculateValueItertools([1721,979,366,299,675,1456]), 514579)
 
 
 
@@ -51,19 +59,24 @@ def checkIf2020(a, b):
         return False
 
 
-def main():
-    with open('Day1_1_input.txt') as f:
-        lines = f.read().splitlines()
-
-    numberOfRows = len(lines)
-    print("NumberOfLines " + str(numberOfRows))
-
+def calculateValue(lines):
     for l in lines:
         for n in lines:
             if (checkIf2020(int(l), int(n))):
-                print("Häpp! " + str(int(l) * int(n)))
-                
+                return (int(l) * int(n))
+
+def calculateValueItertools(lines):
+    for a, b in itertools.combinations(lines, 2):
+        if (a + b == 2020):
+            return a * b
+
+def main():
+    with open('Day1_1_input.txt') as f:
+        entries = [int(e) for e in set(f.read().splitlines())]
+    f.close()
+  
+    print("Värde: " + str(calculateValueItertools(entries)))
 
 if __name__ == "__main__":
-    #unittest.main()
-    main()
+    unittest.main()
+    #main()
