@@ -28,12 +28,6 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 
 Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
 
->>> data = [1721, 979,366,299,675,1456]
->>> list(itertools.accumulate(data, operator.mul))
-[1721, 1684859, 616658394, 184380859806, 124457080369050, 181209509017336800]
->>> list(itertools.accumulate(data, operator.add))
-[1721, 2700, 3066, 3365, 4040, 5496]
->>> 
 
 """
 import unittest, math, itertools, operator
